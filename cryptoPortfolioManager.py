@@ -72,7 +72,12 @@ print(colored(' '*20 + f'Total Invested: {totalInvested}', colors[0]))
 print(colored(' '*20 + f'Total Current: {totalCurrent}', colors[0]))
 if totalProfits > 0:
     clr = colors[1]
+    upOrDown = 'up'
 else:
     clr = colors[2]
+    upOrDown = 'down'
+
 print(colored(' '*20 + f'Total Profits: {totalProfits}', clr))
+print(colored(' '*20 + f'Portfolio {upOrDown} by ', colors[0]), end="")
+print(colored(f'{round(totalProfits/totalInvested * 100, 2)} %', clr))
 print()
