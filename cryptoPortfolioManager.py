@@ -21,7 +21,6 @@ colors = ['yellow', 'green', 'red', 'white']
 spaces = []
 fields.append('Invested')
 fields.append('Current Value')
-# fields.append('Net Profits')
 fields.append('Gains (%)')
 for field in fields:
     if len(field) < 5:
@@ -54,11 +53,6 @@ invested = [round(quantity[i]*buyingAverage[i], 2) for i in range(len(coins))]
 profits = [current[i]-invested[i] for i in range(len(coins))]
 gains = [round(profits[i]/invested[i] * 100, 2) for i in range(len(coins))]
 
-# for row in rows:
-#     for col, space in zip(row, spaces):
-#         print(col + " "*(space-len(col)) + "| ", end='')
-#     print
-
 for i in range(len(coins)):
     if profits[i]>0:
         color = colors[1]
@@ -70,4 +64,15 @@ for i in range(len(coins)):
 
 print('')
 
-# + " "*(spaces[5]-len(str(current[i]))) + str(current[i]) + ' |' 
+totalInvested = round(sum(invested), 2)
+totalCurrent = round(sum(current), 2)
+totalProfits = round(totalCurrent - totalInvested, 2)
+
+print(colored(' '*20 + f'Total Invested: {totalInvested}', colors[0]))
+print(colored(' '*20 + f'Total Current: {totalCurrent}', colors[0]))
+if totalProfits > 0:
+    clr = colors[1]
+else:
+    clr = colors[2]
+print(colored(' '*20 + f'Total Profits: {totalProfits}', clr))
+print()
