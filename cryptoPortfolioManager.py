@@ -6,6 +6,20 @@ cg = CoinGeckoAPI()
 sheetPath = '/home/srivathsan/Documents/Important Documents/crypto_portfolio.csv'
 fiatCurrency = 'inr'
 
+def getUSTaxBacket(totalProfits):
+    if totalProfits <= 40400:
+        return 1
+    elif totalProfits >= 40401 and totalProfits <= 445850:
+        return 0.85
+    elif totalProfits >= 445851:
+        return 0.8
+
+def getTaxMultiplier(totalProfits):
+    if fiatCurrency == 'inr':
+        taxMultiplier = 0.4
+    elif fiatCurrency == 'usd':
+        taxMultiplier = getUSTaxBacket(totalProfits=totalProfits)
+
 def getPrice(cryptoId):
     return cg.get_price(ids=cryptoId, vs_currencies=fiatCurrency)
 
@@ -85,7 +99,7 @@ print()
 
 netProfit = totalProfits
 if upOrDown == 'up':
-    netProfit *= 0.7
+    netProfit *= getTaxMultiplier(totalProfits=totalProfits)
 
 print(colored(' '*20 + f'Net Profits: {netProfit}', clr))
 print(colored(' '*20 + f'Net Portfolio {upOrDown} by ', colors[0]), end="")
