@@ -4,9 +4,10 @@ from pycoingecko import CoinGeckoAPI
 
 cg = CoinGeckoAPI()
 sheetPath = '/home/srivathsan/Documents/Important Documents/crypto_portfolio.csv'
+fiatCurrency = 'inr'
 
 def getPrice(cryptoId):
-    return cg.get_price(ids=cryptoId, vs_currencies='inr')
+    return cg.get_price(ids=cryptoId, vs_currencies=fiatCurrency)
 
 fields = []
 rows = []
@@ -80,4 +81,13 @@ else:
 print(colored(' '*20 + f'Total Profits: {totalProfits}', clr))
 print(colored(' '*20 + f'Portfolio {upOrDown} by ', colors[0]), end="")
 print(colored(f'{round(totalProfits/totalInvested * 100, 2)} %', clr))
+print()
+
+netProfit = totalProfits
+if upOrDown == 'up':
+    netProfit *= 0.7
+
+print(colored(' '*20 + f'Net Profits: {netProfit}', clr))
+print(colored(' '*20 + f'Net Portfolio {upOrDown} by ', colors[0]), end="")
+print(colored(f'{round(netProfit/totalInvested * 100, 2)} %', clr))
 print()
