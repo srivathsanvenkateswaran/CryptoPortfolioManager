@@ -1,3 +1,65 @@
 # CryptoPortfolioManager
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) </br>
 A CLI Tool to manage and track your crypto portfolio
+
+## Requirements
+Pycoingecko </br>
+termcolor </br>
+
+## Usage
+
+Clone the repository.
+```
+git clone https://github.com/srivathsanvenkateswaran/CryptoPortfolioManager
+```
+Then navigate into the directory
+```
+cd CryptoPortfolioManager
+```
+Install the requirements with the help of requirements.txt
+```
+pip install -r requirements.txt
+```
+Now run the cryptoPortfolioManager.py file
+```
+python3 cryptoPortfolioManager.py
+```
+## Tip
+You can create a file and place it in ```/usr/bin``` directory and execute it as a terminal command. </br>
+Here's how you can do so. </br>
+```
+cp cryptoPortfolioManager.py crypto
+```
+Open the file in nano editor
+```
+nano crypto
+```
+Now add the following line on top of the crypto file
+```
+#!/usr/bin/python3
+```
+Then move the cryto file to ```/usr/bin```.
+```
+sudo cp crypto /usr/bin
+```
+Now you can use it as a terminal command. </br></br>
+
+Feel free to ping me in case of any doubts!!
+
+## Sample Screenshots
+
+Here is a sample csv file containing details of a sample portfolio. </br>
+
+![Screenshot from 2022-02-03 12-23-33](https://user-images.githubusercontent.com/74530357/152295450-bd6c333f-bf08-44ef-8bc6-a9b5120c3149.png)
+
+Here is the result of the sample portfolio
+
+![Screenshot from 2022-02-03 12-23-37](https://user-images.githubusercontent.com/74530357/152295457-ee7559b4-7969-4cf6-bd2e-4c3b5c95e343.png)
+
+## Sample GIF
+
+![CryptoPortfolioManager](https://user-images.githubusercontent.com/74530357/152296017-ad21c6c3-2d43-4e5a-ae90-d9d076e5518c.gif)
+
+## Full video
+
+https://user-images.githubusercontent.com/74530357/152295608-c76812a0-9130-446d-958b-301b86f9150e.mp4
