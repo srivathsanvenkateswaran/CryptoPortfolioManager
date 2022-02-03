@@ -63,7 +63,7 @@ for row in rows:
     quantity.append(float(row[2]))
     buyingAverage.append(float(row[3]))
 
-current = [round(quantity[i]*getPrice(coins[i])[coins[i]]['inr'], 2) for i in range(len(coins))]
+current = [round(quantity[i]*getPrice(coins[i])[coins[i]][fiatCurrency], 2) for i in range(len(coins))]
 invested = [round(quantity[i]*buyingAverage[i], 2) for i in range(len(coins))]
 profits = [current[i]-invested[i] for i in range(len(coins))]
 gains = [round(profits[i]/invested[i] * 100, 2) for i in range(len(coins))]
