@@ -31,8 +31,8 @@ python3 cryptoPortfolioManager.py [OPTIONS]..
 ```
 List of available options: </br>
 ```No options specified``` - Displays portfolio data alone. </br>
-```-h or --help``` - Displays list of available options. </br>
-```-w or --weightage``` - Shows the Portfolio along with the coin weightage in portfolio. </br>
+```-h or --help```         - Displays list of available options. </br>
+```-w or --weightage```    - Shows the Portfolio along with the coin weightage in portfolio. </br>
 ## Tip
 You can create a file and place it in ```/usr/bin``` directory and execute it as a terminal command. </br>
 Here's how you can do so. </br>
