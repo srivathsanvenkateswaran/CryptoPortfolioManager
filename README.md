@@ -24,6 +24,10 @@ Now run the cryptoPortfolioManager.py file
 ```
 python3 cryptoPortfolioManager.py
 ```
+
+NOTE: Create a CSV file in the below mentioned format and replace the contents of ```sheetPath``` variable with the absolute path of your CSV sheet.
+
+You can refer this [sheet](https://docs.google.com/spreadsheets/d/1wTTuxXt8n9q7C4NDXqQpI3wpKu1_5bGVmP9Xz0XGSyU/edit#gid=0) to get the coingecko ID of your desired coin.
 ## Usage
 
 ```
