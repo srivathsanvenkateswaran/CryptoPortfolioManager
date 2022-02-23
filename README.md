@@ -48,13 +48,17 @@ Feel free to ping me in case of any doubts!!
 
 ## Sample Screenshots
 
-Here is a sample csv file containing details of a sample portfolio. </br>
+Sample of a csv file containing details of a sample portfolio. </br>
 
-![Screenshot from 2022-02-03 12-23-33](https://user-images.githubusercontent.com/74530357/152295450-bd6c333f-bf08-44ef-8bc6-a9b5120c3149.png)
+![Porfolio CSV File](https://user-images.githubusercontent.com/74530357/152295450-bd6c333f-bf08-44ef-8bc6-a9b5120c3149.png)
 
-Here is the result of the sample portfolio
+Sample portfolio
 
-![Screenshot from 2022-02-03 12-23-37](https://user-images.githubusercontent.com/74530357/152295457-ee7559b4-7969-4cf6-bd2e-4c3b5c95e343.png)
+![Sample Porftolio](https://user-images.githubusercontent.com/74530357/152295457-ee7559b4-7969-4cf6-bd2e-4c3b5c95e343.png)
+
+Portfolio Coin Weightage
+
+![Porfolio Coin Weightage](https://user-images.githubusercontent.com/74530357/155284845-1eb3d9b5-d3f5-446f-a484-8d3d7752487a.png)
 
 ## Sample GIF
 
