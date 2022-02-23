@@ -1,4 +1,5 @@
 import csv
+from sqlalchemy import true
 from termcolor import colored
 from pycoingecko import CoinGeckoAPI
 
@@ -32,7 +33,7 @@ with open(sheetPath, 'r') as file:
     for row in csvreader:
         rows.append(row)
 
-colors = ['yellow', 'green', 'red', 'white']
+colors = ['yellow', 'green', 'red', 'white', 'cyan']
 spaces = []
 fields.append('Invested')
 fields.append('Current Value')
@@ -105,3 +106,21 @@ print(colored(' '*20 + f'Net Profits: {netProfit}', clr))
 print(colored(' '*20 + f'Net Portfolio {upOrDown} by ', colors[0]), end="")
 print(colored(f'{round(netProfit/totalInvested * 100, 2)} %', clr))
 print()
+
+investedDict = {}
+
+for i in range(0, len(ticker)):
+    investedDict[ticker[i]] = invested[i]
+
+investedDict = dict(sorted(investedDict.items(), key=lambda item: item[1]))
+investedDict = dict(reversed(list(investedDict.items())))
+
+print(colored(' '*10 + 'Portfolio Weightage: ', colors[1]))
+print()
+
+print(' '*10 + 'Coin  |  Invested |  Share ')
+
+for key, value in investedDict.items():
+    coinShare = str(round(value/totalInvested * 100, 2))
+    print(colored(' '*10 + key + ' '*(6-len(key)), colors[0]) + '|' + colored(' '*(10-len(str(value))) + str(value), colors[0]), end = " ")
+    print('|' + colored(' '*(7-len(coinShare)) + coinShare + ' %', colors[4]))
