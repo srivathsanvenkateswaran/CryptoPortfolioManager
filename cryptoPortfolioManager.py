@@ -1,7 +1,20 @@
 import csv
-from sqlalchemy import true
 from termcolor import colored
 from pycoingecko import CoinGeckoAPI
+import sys
+
+if(len(sys.argv) > 1):
+    if(sys.argv[1] in ['-h', '--help']):
+        print(
+            '''Usage: python3 cryptoPortfolioManager.py [OPTION]...        
+Crypto Portfolio Manager - A CLI Tool to keep track of your crypto Portfolio.
+
+List of supported long options and short options.
+  -h,  --help         Display the Help command.
+  -w, --weightage     Show the crypto Portfolio along with Coin Weightage.
+            '''
+        )
+        sys.exit()
 
 cg = CoinGeckoAPI()
 sheetPath = '/home/srivathsan/Documents/Important Documents/crypto_portfolio.csv'
@@ -107,20 +120,22 @@ print(colored(' '*20 + f'Net Portfolio {upOrDown} by ', colors[0]), end="")
 print(colored(f'{round(netProfit/totalInvested * 100, 2)} %', clr))
 print()
 
-investedDict = {}
+if(len(sys.argv) > 1):
+    if(sys.argv[1] in ['-w', '--weightage']):
+        investedDict = {}
 
-for i in range(0, len(ticker)):
-    investedDict[ticker[i]] = invested[i]
+        for i in range(0, len(ticker)):
+            investedDict[ticker[i]] = invested[i]
 
-investedDict = dict(sorted(investedDict.items(), key=lambda item: item[1]))
-investedDict = dict(reversed(list(investedDict.items())))
+        investedDict = dict(sorted(investedDict.items(), key=lambda item: item[1]))
+        investedDict = dict(reversed(list(investedDict.items())))
 
-print(colored(' '*10 + 'Portfolio Weightage: ', colors[1]))
-print()
+        print(colored(' '*10 + 'Portfolio Weightage: ', colors[1]))
+        print()
 
-print(' '*10 + 'Coin  |  Invested |  Share ')
+        print(' '*10 + 'Coin  |  Invested |  Share ')
 
-for key, value in investedDict.items():
-    coinShare = str(round(value/totalInvested * 100, 2))
-    print(colored(' '*10 + key + ' '*(6-len(key)), colors[0]) + '|' + colored(' '*(10-len(str(value))) + str(value), colors[0]), end = " ")
-    print('|' + colored(' '*(7-len(coinShare)) + coinShare + ' %', colors[4]))
+        for key, value in investedDict.items():
+            coinShare = str(round(value/totalInvested * 100, 2))
+            print(colored(' '*10 + key + ' '*(6-len(key)), colors[0]) + '|' + colored(' '*(10-len(str(value))) + str(value), colors[0]), end = " ")
+            print('|' + colored(' '*(7-len(coinShare)) + coinShare + ' %', colors[4]))
