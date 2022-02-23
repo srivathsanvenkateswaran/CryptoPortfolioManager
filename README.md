@@ -6,7 +6,7 @@ A CLI Tool to manage and track your crypto portfolio
 Pycoingecko </br>
 termcolor </br>
 
-## Usage
+## Installation and Setup
 
 Clone the repository.
 ```
@@ -24,6 +24,15 @@ Now run the cryptoPortfolioManager.py file
 ```
 python3 cryptoPortfolioManager.py
 ```
+## Usage
+
+```
+python3 cryptoPortfolioManager.py [OPTIONS]..
+```
+List of available options: </br>
+```No options specified``` - Displays portfolio data alone.
+```-h or --help``` - Displays list of available options.
+```-w or --weightage``` - Shows the Portfolio along with the coin weightage in portfolio.
 ## Tip
 You can create a file and place it in ```/usr/bin``` directory and execute it as a terminal command. </br>
 Here's how you can do so. </br>
