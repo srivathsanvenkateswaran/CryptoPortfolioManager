@@ -3,6 +3,7 @@ from termcolor import colored
 from pycoingecko import CoinGeckoAPI
 import sys
 
+# Handling system args
 if(len(sys.argv) > 1):
     if(sys.argv[1] in ['-h', '--help']):
         print(
