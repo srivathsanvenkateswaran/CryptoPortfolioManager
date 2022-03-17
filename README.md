@@ -8,7 +8,7 @@ termcolor </br>
 
 ## Installation and Setup
 
-Clone the repository.
+Clone the repository
 ```
 git clone https://github.com/srivathsanvenkateswaran/CryptoPortfolioManager
 ```
