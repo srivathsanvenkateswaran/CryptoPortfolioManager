@@ -53,7 +53,7 @@ Now add the following line on top of the crypto file
 ```
 #!/usr/bin/python3
 ```
-Then move the cryto file to ```/usr/bin```.
+Then move the cryto file to ```/usr/bin```
 ```
 sudo cp crypto /usr/bin
 ```
