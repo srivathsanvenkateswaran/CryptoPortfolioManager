@@ -1,6 +1,6 @@
 # CryptoPortfolioManager
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) </br>
-A CLI Tool to manage and track your crypto portfolio
+A CLI Tool to manage and track your crypto portfolio.
 
 ## Requirements
 Pycoingecko </br>
